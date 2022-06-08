@@ -1,17 +1,34 @@
 # RestAPI-project
 
-Get a specific Thing
-Request
-GET /thing/id
+/users GET
+Возвращает список пользователей
 
-curl -i -H 'Accept: application/json' http://localhost:7000/thing/1
-Response
-HTTP/1.1 200 OK
-Date: Thu, 24 Feb 2011 12:36:30 GMT
-Status: 200 OK
-Connection: close
-Content-Type: application/json
-Content-Length: 36
+/users/{id} GET
+Возвращает информацию о пользователе
+id(int) Индетификатор пользователя
 
-{"id":1,"name":"Foo","status":"new"}
-Get a non-existent Thing
+/users/{id}/cities GET
+Возвращает информацию о городах, в котрых побывал пользователь
+id(int) Индетификатор пользователя
+
+/users/{id}/ratings GET
+Возвращает информацию о оценках, оставленных пользователем
+id(int) Индетификатор пользователя
+
+/users POST
+Добавляет нового пользователя
+Body
+name(string) Имя пользователя
+
+/users PUT
+Обновляет информацию о пользователе
+Body
+id(int) Индетификатор пользователя
+name(string) Имя пользователя
+
+/users DELETE
+Удаляет информацию о пользователе
+Body
+id(int) Индетификатор пользователя
+
+
